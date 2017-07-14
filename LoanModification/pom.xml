@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.fanniemae.cmft.finanace</groupId>
-	<artifactId>LoanAcquisition</artifactId>
+	<artifactId>LoanModification</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>LoanAcquisition</name>
+	<name>LoanModification</name>
 	<description>Demo project for Microservice, Redis, JWT and Docker</description>
 
 	<parent>

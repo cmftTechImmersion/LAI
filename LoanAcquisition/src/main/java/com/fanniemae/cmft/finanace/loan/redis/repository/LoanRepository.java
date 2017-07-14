@@ -14,4 +14,6 @@ public interface LoanRepository {
     public Map<Object, Object> getLoans();
 
     public Loan modifyLoan(Loan loan);
+
+    public String searchLoanByBorrowerId(String borrowerId);
 }
