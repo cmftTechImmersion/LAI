@@ -9,30 +9,39 @@ public class Loan implements Serializable {
     public Loan() {
     }
 
-    String loanId;
+    long loanId;
     BigDecimal fiannceUPB;
-    Date acquisationDate;
+    Date acquisitionDate;
     LoanSaleType loneSaleType;
     String poolId;
+    String borrowerId;
 
+    public String getBorrowerId() {
+        return borrowerId;
+    }
 
-   public static enum LoanSaleType{
+    public void setBorrowerId(String borrowerId) {
+        this.borrowerId = borrowerId;
+    }
+
+    public static enum LoanSaleType{
         CASH, SWAP, PFP, LTSC
     }
 
-    public Loan(String loanId, BigDecimal fiannceUPB, Date acquisationDate, LoanSaleType loneSaleType, String poolId) {
+    public Loan(long loanId, BigDecimal fiannceUPB, Date acquisitionDate, LoanSaleType loneSaleType, String poolId, String borrowerId) {
         this.loanId = loanId;
         this.fiannceUPB = fiannceUPB;
-        this.acquisationDate = acquisationDate;
+        this.acquisitionDate = acquisitionDate;
         this.loneSaleType = loneSaleType;
         this.poolId = poolId;
+        this.borrowerId = borrowerId;
     }
 
-    public String getLoanId() {
+    public long getLoanId() {
         return loanId;
     }
 
-    public void setLoanId(String loanId) {
+    public void setLoanId(long loanId) {
         this.loanId = loanId;
     }
 
@@ -44,12 +53,12 @@ public class Loan implements Serializable {
         this.fiannceUPB = fiannceUPB;
     }
 
-    public Date getAcquisationDate() {
-        return acquisationDate;
+    public Date getAcquisitionDate() {
+        return acquisitionDate;
     }
 
-    public void setAcquisationDate(Date acquisationDate) {
-        this.acquisationDate = acquisationDate;
+    public void setAcquisitionDate(Date acquisitionDate) {
+        this.acquisitionDate = acquisitionDate;
     }
 
     public LoanSaleType getLoneSaleType() {
@@ -68,28 +77,4 @@ public class Loan implements Serializable {
         this.poolId = poolId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Loan loan = (Loan) o;
-
-        if (loanId != null ? !loanId.equals(loan.loanId) : loan.loanId != null) return false;
-        if (fiannceUPB != null ? !fiannceUPB.equals(loan.fiannceUPB) : loan.fiannceUPB != null) return false;
-        if (acquisationDate != null ? !acquisationDate.equals(loan.acquisationDate) : loan.acquisationDate != null)
-            return false;
-        if (loneSaleType != loan.loneSaleType) return false;
-        return poolId.equals(loan.poolId);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = loanId != null ? loanId.hashCode() : 0;
-        result = 31 * result + (fiannceUPB != null ? fiannceUPB.hashCode() : 0);
-        result = 31 * result + (acquisationDate != null ? acquisationDate.hashCode() : 0);
-        result = 31 * result + (loneSaleType != null ? loneSaleType.hashCode() : 0);
-        result = 31 * result + poolId.hashCode();
-        return result;
-    }
 }

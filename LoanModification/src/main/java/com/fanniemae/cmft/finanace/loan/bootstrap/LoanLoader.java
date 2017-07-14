@@ -18,7 +18,7 @@ public class LoanLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        Loan ln1 = new Loan("11", new BigDecimal(12343.23), new Date(),Loan.LoanSaleType.CASH, "2");
+        Loan ln1 = new Loan(11, new BigDecimal(12343.23), new Date(),Loan.LoanSaleType.CASH, "2","12");
         loanRepository.acquireLoan(ln1);
         System.out.println("Loan saved");
     }
